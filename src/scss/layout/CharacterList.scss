@@ -1,0 +1,11 @@
+.allCharacters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__each{
+        flex-basis: 30%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+
+    }
+}
