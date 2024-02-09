@@ -1,0 +1,15 @@
+@import 'core/Reset.scss';
+
+.title{
+    color: brown;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.filterContainer{
+    margin-top: 20px;
+    &__label{
+        display: flex;
+        margin-bottom: 10px;
+    }
+}
