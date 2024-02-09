@@ -8,8 +8,16 @@
 
 .filterContainer{
     margin-top: 20px;
-    &__label{
-        display: flex;
+    font-size: 150%;
+    display: block;
+    flex-direction: column;
+
+    &__labelHouse{
+        margin-right: 10px;
         margin-bottom: 10px;
+    }
+    &__labelName{
+
+
     }
 }
