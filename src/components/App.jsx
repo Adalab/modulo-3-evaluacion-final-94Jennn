@@ -17,6 +17,9 @@ function App() {
   useEffect(() => {
     getDataApi().then((dataChar) => {
       setCharacters(dataChar);
+      setLoading(false);
+      const savedCharacters = loadCharactersFromLocalStorage();
+      setCharacters(savedCharacters);
     })
   }, [])
 

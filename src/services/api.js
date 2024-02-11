@@ -1,3 +1,5 @@
+import { saveCharactersToLocalStorage } from "./localStorage";
+
 const getDataApi = () => {
     return fetch('https://hp-api.onrender.com/api/characters/')
       .then((response) => response.json())
@@ -14,6 +16,9 @@ const getDataApi = () => {
           };
           return characterData;
         });
+
+        saveCharactersToLocalStorage(dataChar);
+
         return dataChar;
       });
   };
