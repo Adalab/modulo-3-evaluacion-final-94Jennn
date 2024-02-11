@@ -3,6 +3,14 @@
 
 function CharacterList({ characters }) {
 
+  //if (!characters.length) {
+    //return <p>No hay coincidencias</p>;
+  //}
+
+  if (characters.length === 0) {
+    return <p className="error">No hay ningún personaje que coincida con tu búsqueda</p>;
+  }
+
   return (
     <div className='allCharacters'>
         {/* Mostrar personajes aquí */}

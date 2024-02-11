@@ -2,14 +2,9 @@
 
 function CharacterDetail({characters, handleClickCharacter}) {
   
-
-
-  if (!character) {
-    return <div>Character not found</div>;
-  }
-
   return (
     <div>
+      <button>Volver</button>
       <h2>{character.name}</h2>
       <img src={character.image} alt={character.name} />
       <p>{character.gender}</p>
