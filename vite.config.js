@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/módulo3-evaluación final/",
+  base: "/modulo-3-evaluacion-final-94Jennn/",
 })
