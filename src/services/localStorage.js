@@ -3,7 +3,7 @@ export const saveCharactersToLocalStorage = (characters) => {
     localStorage.setItem('characters', dataJson);
   }
   
-  export const loadCharactersFromLocalStorage = () => {
+export const loadCharactersFromLocalStorage = () => {
     const dataJson = localStorage.getItem('characters');
     if (dataJson) {
       return JSON.parse(dataJson);
@@ -11,5 +11,3 @@ export const saveCharactersToLocalStorage = (characters) => {
       return [];
     }
   }
-
-  

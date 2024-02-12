@@ -8,6 +8,7 @@ import CharacterDetail from './Characters/CharacterDetail';
 import Header from './Header';
 
 
+
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
