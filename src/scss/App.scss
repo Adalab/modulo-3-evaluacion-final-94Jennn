@@ -1,5 +1,6 @@
 @import 'core/Reset.scss';
 @import 'layout/CharacterList.scss';
+@import 'layout/CharacterDetail.scss';
 
 .title{
     color: brown;
@@ -16,9 +17,5 @@
     &__labelHouse{
         margin-right: 10px;
         margin-bottom: 10px;
-    }
-    &__labelName{
-
-
     }
 }

@@ -13,14 +13,10 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("Gryffindor");
-  const [idClicked, setidClicked] = useState(0);
-  //Llamada a la api: 
+
   useEffect(() => {
     getDataApi().then((dataChar) => {
       setCharacters(dataChar);
-      setLoading(false);
-      const savedCharacters = loadCharactersFromLocalStorage();
-      setCharacters(savedCharacters);
     })
   }, [])
 
@@ -30,26 +26,21 @@ function App() {
       character.house === filterHouse);
   }
 
-  //Variable de Filtrado de personajes:
   const filteredCharacters = filterCharacters(characters, filterName, filterHouse);
 
-  //función Filtro del Nombre:
   const handleFilterName = (value) => {
     setFilterName(value)
   }
 
-  //función Filtro por Casa:
   const handleFilterHouse = (value) => {
     setFilterHouse(value)
   }
 
-  //función para hacer click sobre personaje:
-  const handleClickCharacter = (value) => {
-    const { id } = useParams();
-    const character = characters.find((character) => character.id === parseInt(id));
-    setidClicked(value)
-  }
-
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  };
 
   return <>
 
@@ -60,8 +51,10 @@ function App() {
 
       
       <Routes>
-        <Route path="/" element={<CharacterList characters={filteredCharacters} />} />
-        <Route path='/characterDetail/:id' element={<CharacterDetail characters={handleClickCharacter}/>} />
+        <Route path="/" element={<CharacterList characters={filteredCharacters} filterName={filterName} filterHouse={filterHouse}/>} />
+        {characters.map((character) => (
+          <Route key={character.id} path={`/characterDetail/${character.id}`} element={<CharacterDetail character={character} />} />
+        ))}
       </Routes>
     </>
 

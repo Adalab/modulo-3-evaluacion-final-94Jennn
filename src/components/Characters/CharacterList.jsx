@@ -1,11 +1,6 @@
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
-function CharacterList({ characters }) {
-
-  //if (!characters.length) {
-    //return <p>No hay coincidencias</p>;
-  //}
+function CharacterList({ characters, filterName, filterHouse }) {
 
   if (characters.length === 0) {
     return <p className="error">No hay ningún personaje que coincida con tu búsqueda</p>;
@@ -13,12 +8,13 @@ function CharacterList({ characters }) {
 
   return (
     <div className='allCharacters'>
-        {/* Mostrar personajes aquí */}
         {characters.map(character => (
           <div 
           key={character.id} 
           className='allCharacters__each'>
+            <Link to={`/characterDetail/${character.id}`}>
             <img src={character.image} alt={character.name} />
+            </Link>
             <p> {character.name}</p>
             <p> {character.species}</p>
             

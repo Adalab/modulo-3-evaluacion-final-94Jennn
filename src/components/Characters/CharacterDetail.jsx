@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
 
-
-function CharacterDetail({characters, handleClickCharacter}) {
+function CharacterDetail({character}) {
   
   return (
     <div>
-      <button>Volver</button>
-      <h2>{character.name}</h2>
       <img src={character.image} alt={character.name} />
-      <p>{character.gender}</p>
-      <p>{character.species}</p>
-      <p>{character.house}</p>
+      <h2>{character.name}</h2>
+      <p> Género: {character.gender}</p>
+      <p>Especie: {character.species}</p>
+      <p>Casa: {character.house}</p>
+      <p>Estado: {character.alive ? "Vivo" : "Fallecido"}</p>
+      <Link to="/" className="btn">
+        <button>Volver</button>
+      </Link>
     </div>
   )
 }
